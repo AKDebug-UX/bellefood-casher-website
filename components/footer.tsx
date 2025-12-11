@@ -17,7 +17,7 @@ export function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
-            <div className="space-y-2 text-sm">
+            <div className="flex flex-col space-y-2 text-sm">
               <Link href="#menu" className="text-foreground/70 hover:text-primary transition">
                 Menu
               </Link>
@@ -81,7 +81,10 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-foreground/60">
-          <p>© 2025 Bellefood Casher. All rights reserved.</p>
+          <p>
+            © 2025 Bellefood Casher. All rights reserved.
+            <span className="ml-2">• Built by <a href="https://upraisertech.name.ng">AKDebug</a></span>
+          </p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="#" className="hover:text-primary transition">
               Privacy Policy
