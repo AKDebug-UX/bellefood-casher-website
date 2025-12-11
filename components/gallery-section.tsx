@@ -5,12 +5,9 @@ import { Card } from "@/components/ui/card"
 import { X } from "lucide-react"
 
 const GALLERY_ITEMS = [
-  "/placeholder.svg?height=400&width=400",
-  "/placeholder.svg?height=400&width=400",
-  "/placeholder.svg?height=400&width=400",
-  "/placeholder.svg?height=400&width=400",
-  "/placeholder.svg?height=400&width=400",
-  "/placeholder.svg?height=400&width=400",
+  "/flyer.jpg?height=400&width=400",
+  "/flyer.jpg?height=400&width=400",
+  "/flyer.jpg?height=400&width=400",
 ]
 
 export function GallerySection() {

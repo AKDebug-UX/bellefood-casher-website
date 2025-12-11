@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { Menu, X, ShoppingBag } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,8 +14,8 @@ export function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-xl md:text-2xl text-foreground">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <ShoppingBag className="w-5 h-5 text-primary-foreground" />
+          <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+            <Image alt="Bellefood Logo" width={50} height={50} src="/icon.png" className="rounded-full text-primary-foreground" />
           </div>
           <span>Bellefood</span>
         </Link>
