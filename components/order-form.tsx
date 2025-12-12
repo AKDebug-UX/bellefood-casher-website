@@ -110,15 +110,15 @@ export function OrderForm() {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
       {/* Menu Items */}
       <div className="lg:col-span-2">
         <h2 className="text-2xl font-bold mb-6">Select Items</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 bg-white border-white/50 p-2 rounded-md gap-2">
           {MENU_ITEMS.map((item) => (
-            <Card key={item.id} className="bg-card border-border/50 p-4 flex items-center justify-between">
+            <Card key={item.id} className="bg-card border-border/50 p-3 flex items-start justify-between">
               <div>
-                <h3 className="font-semibold">{item.name}</h3>
+                <h3 className="font-semibold text-sm">{item.name}</h3>
                 <p className="text-primary font-bold">₦{item.price}</p>
               </div>
               <Button
@@ -224,7 +224,7 @@ export function OrderForm() {
 
             <Button
               type="submit"
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3"
+              className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3"
               disabled={cart.length === 0}
             >
               <ShoppingCart className="w-4 h-4 mr-2" />
