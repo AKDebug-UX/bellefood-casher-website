@@ -35,9 +35,9 @@ export function MenuCategories({ items, onOrder }: MenuCategoriesProps) {
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full font-medium transition ${
+            className={`px-3 py-2 text-sm rounded-full font-medium transition ${
               selectedCategory === category
-                ? "bg-primary text-primary-foreground"
+                ? "bg-primary text-white"
                 : "bg-card border border-border text-foreground hover:border-primary"
             }`}
           >
@@ -62,8 +62,8 @@ export function MenuCategories({ items, onOrder }: MenuCategoriesProps) {
               />
               {item.rating && (
                 <div className="absolute top-3 right-3 bg-primary/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1">
-                  <Star className="w-4 h-4 fill-primary-foreground text-primary-foreground" />
-                  <span className="text-sm font-semibold text-primary-foreground">{item.rating}</span>
+                  <Star className="w-4 h-4 fill-white text-white" />
+                  <span className="text-sm font-semibold text-white">{item.rating}</span>
                 </div>
               )}
             </div>
@@ -80,7 +80,7 @@ export function MenuCategories({ items, onOrder }: MenuCategoriesProps) {
                 <span className="text-primary font-bold text-lg">{item.price}</span>
                 <Button
                   size="sm"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                  className="bg-primary hover:bg-primary/90 text-white"
                   onClick={() => onOrder(item)}
                 >
                   <ShoppingCart className="w-4 h-4" />
