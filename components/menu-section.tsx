@@ -6,29 +6,28 @@ import { ShoppingCart } from "lucide-react"
 
 const MENU_CATEGORIES = {
   "Rice Dishes": [
-    { name: "Jollof Rice", price: "₦1,500", image: "/nigerian-jollof-rice.jpg" },
-    { name: "Fried Rice", price: "₦1,500", image: "/delicious-fried-rice.jpg" },
-    { name: "Ofada Rice", price: "₦1,800", image: "/traditional-ofada-rice.jpg" },
-    { name: "Coconut Rice", price: "₦2,000", image: "/creamy-coconut-rice.jpg" },
+    { name: "Party Jollof Rice", price: "₦4,000", image: "/nigerian-jollof-rice.jpg" },
+    { name: "Jollof Rice and Beans", price: "₦4,000", image: "/delicious-jollof-rice-with-chicken.jpg" },
+    { name: "Village Rice", price: "₦5,000", image: "/traditional-nigerian-soup-and-swallow.jpg" },
+    { name: "White Rice and Beans", price: "₦4,500", image: "/fresh-fried-rice-with-crispy-chicken.jpg" },
   ],
   Proteins: [
-    { name: "Grilled Chicken", price: "₦2,500", image: "/juicy-grilled-chicken.jpg" },
-    { name: "Fried Turkey", price: "₦3,500", image: "/golden-fried-turkey.jpg" },
-    { name: "Beef Stew", price: "₦2,000", image: "/hearty-beef-stew.jpg" },
-    { name: "Fried Fish", price: "₦2,800", image: "/crispy-fried-fish.jpg" },
+    { name: "Peppered Chicken", price: "₦5,500", image: "/juicy-grilled-chicken.jpg" },
+    { name: "Peppered Turkey", price: "₦6,000", image: "/golden-fried-turkey.jpg" },
+    { name: "Beef", price: "₦2,000", image: "/hearty-beef-stew.jpg" },
+    { name: "Goatmeat", price: "₦4,000", image: "/placeholder.jpg" },
   ],
-  Sides: [
-    { name: "Plantain Chips", price: "₦800", image: "/crispy-plantain-chips.jpg" },
-    { name: "Yam Fries", price: "₦900", image: "/golden-yam-fries.jpg" },
-    { name: "Coleslaw", price: "₦600", image: "/fresh-coleslaw-salad.jpg" },
-    { name: "Beans & Corn", price: "₦700", image: "/beans-and-corn.jpg" },
+  "Soft Drinks": [
+    { name: "Hollandia Yoghurt", price: "₦5,500", image: "/placeholder.svg" },
+    { name: "Caprisun", price: "₦1,000", image: "/placeholder.svg" },
+    { name: "Fanta", price: "₦1,000", image: "/placeholder.svg" },
+    { name: "Bottle Water", price: "₦700", image: "/placeholder.svg" },
   ],
 }
 
 export function MenuSection() {
-  const handleOrderClick = (itemName: string) => {
-    const message = `Hello Bellefood Casher, I want to order ${itemName}`
-    window.location.href = `https://wa.me/2349137421838?text=${encodeURIComponent(message)}`
+  const handleOrderClick = () => {
+    window.location.href = "/order"
   }
 
   return (
@@ -62,7 +61,7 @@ export function MenuSection() {
                       <Button
                         size="sm"
                         className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                        onClick={() => handleOrderClick(item.name)}
+                        onClick={handleOrderClick}
                       >
                         <ShoppingCart className="w-4 h-4" />
                       </Button>

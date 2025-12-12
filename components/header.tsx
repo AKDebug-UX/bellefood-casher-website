@@ -22,7 +22,7 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <Link href="#menu" className="text-foreground/80 hover:text-foreground transition">
+          <Link href="/menu" className="text-foreground/80 hover:text-foreground transition">
             Menu
           </Link>
           <Link href="#gallery" className="text-foreground/80 hover:text-foreground transition">

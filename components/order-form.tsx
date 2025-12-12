@@ -15,16 +15,50 @@ interface OrderItem {
 }
 
 const MENU_ITEMS = [
-  { id: "1", name: "Jollof Rice", price: 1500 },
-  { id: "2", name: "Fried Rice", price: 1500 },
-  { id: "3", name: "Ofada Rice", price: 1800 },
-  { id: "4", name: "Coconut Rice", price: 2000 },
-  { id: "5", name: "Grilled Chicken", price: 2500 },
-  { id: "6", name: "Fried Turkey", price: 3500 },
-  { id: "7", name: "Beef Stew", price: 2000 },
-  { id: "8", name: "Fried Fish", price: 2800 },
-  { id: "9", name: "Plantain Chips", price: 800 },
-  { id: "10", name: "Yam Fries", price: 900 },
+  { id: "1", name: "Party Jollof Rice", price: 4000 },
+  { id: "2", name: "Jollof Rice and Beans", price: 4000 },
+  { id: "3", name: "Village Rice", price: 5000 },
+  { id: "4", name: "White Rice and Beans", price: 4500 },
+  { id: "5", name: "Spicy Spaghetti", price: 4000 },
+  { id: "6", name: "Fried Plantain", price: 1000 },
+  { id: "7", name: "Egusi Soup", price: 4000 },
+  { id: "8", name: "Okro Soup", price: 4000 },
+  { id: "9", name: "Eba", price: 700 },
+  { id: "10", name: "Poundo", price: 1500 },
+  { id: "11", name: "White Yam", price: 3000 },
+  { id: "12", name: "Porridge Yam", price: 4000 },
+  { id: "13", name: "Shawarma", price: 6000 },
+  { id: "14", name: "Instant Noodles", price: 8000 },
+  { id: "15", name: "Akara", price: 2000 },
+  { id: "16", name: "Pap", price: 200 },
+  { id: "17", name: "Banger Soup and Starch (Big)", price: 30000 },
+  { id: "18", name: "Banger Soup and Starch (Small)", price: 15000 },
+  { id: "19", name: "Owo Soup and Starch (Big)", price: 30000 },
+  { id: "20", name: "Owo Soup and Starch (Small)", price: 15000 },
+  { id: "21", name: "Barbecue", price: 18000 },
+  { id: "22", name: "Suya", price: 1500 },
+  { id: "23", name: "Roasted Chicken", price: 6000 },
+  { id: "24", name: "Roasted Turkey Wings (3 pcs)", price: 5000 },
+  { id: "25", name: "Peppered Chicken", price: 5500 },
+  { id: "26", name: "Peppered Turkey", price: 6000 },
+  { id: "27", name: "Goatmeat Pepper Soup (Big)", price: 30000 },
+  { id: "28", name: "Goatmeat Pepper Soup (Small)", price: 13000 },
+  { id: "29", name: "Goatmeat", price: 4000 },
+  { id: "30", name: "Beef", price: 2000 },
+  { id: "31", name: "Assorted", price: 1500 },
+  { id: "32", name: "Cow Leg", price: 2000 },
+  { id: "33", name: "Boiled Egg", price: 1000 },
+  { id: "34", name: "Sauce Egg", price: 3000 },
+  { id: "35", name: "Hollandia Yoghurt", price: 5500 },
+  { id: "36", name: "Caprisun", price: 1000 },
+  { id: "37", name: "Big Chivita Exotic", price: 5500 },
+  { id: "38", name: "Vitamilk", price: 4500 },
+  { id: "39", name: "Fanta", price: 1000 },
+  { id: "40", name: "Small Chivita Exotic", price: 1500 },
+  { id: "41", name: "Sprite", price: 800 },
+  { id: "42", name: "Malta Guinness", price: 1500 },
+  { id: "43", name: "Fayrouz", price: 1500 },
+  { id: "44", name: "Bottle Water", price: 700 },
 ]
 
 export function OrderForm() {
@@ -35,6 +69,11 @@ export function OrderForm() {
     address: "",
     paymentMethod: "Cash on Delivery",
   })
+  const WHATSAPP_NUMBERS = [
+    { label: "09063584306", intl: "2349063584306" },
+    { label: "09137421838", intl: "2349137421838" },
+  ]
+  const [recipientIntl, setRecipientIntl] = useState<string>(WHATSAPP_NUMBERS[0].intl)
 
   const addToCart = (item: (typeof MENU_ITEMS)[0]) => {
     const existing = cart.find((x) => x.id === item.id)
@@ -67,7 +106,7 @@ export function OrderForm() {
 
     const message = `Hello Bellefood Casher!\n\n*Order Details:*\n${itemsText}\n\n*Total: ₦${total}*\n\n*Delivery Information:*\nName: ${deliveryInfo.name}\nPhone: ${deliveryInfo.phone}\nAddress: ${deliveryInfo.address}\nPayment: ${deliveryInfo.paymentMethod}`
 
-    window.location.href = `https://wa.me/2349137421838?text=${encodeURIComponent(message)}`
+    window.location.href = `https://wa.me/${recipientIntl}?text=${encodeURIComponent(message)}`
   }
 
   return (
@@ -164,6 +203,15 @@ export function OrderForm() {
               onChange={(e) => setDeliveryInfo({ ...deliveryInfo, address: e.target.value })}
               className="w-full px-3 py-2 bg-input border border-border rounded text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none"
             />
+            <select
+              value={recipientIntl}
+              onChange={(e) => setRecipientIntl(e.target.value)}
+              className="w-full px-3 py-2 bg-input border border-border rounded text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+            >
+              {WHATSAPP_NUMBERS.map((n) => (
+                <option key={n.intl} value={n.intl}>{`Send to WhatsApp ${n.label}`}</option>
+              ))}
+            </select>
             <select
               value={deliveryInfo.paymentMethod}
               onChange={(e) => setDeliveryInfo({ ...deliveryInfo, paymentMethod: e.target.value })}
