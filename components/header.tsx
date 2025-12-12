@@ -25,16 +25,20 @@ export function Header() {
           <Link href="/menu" className="text-foreground/80 hover:text-foreground transition">
             Menu
           </Link>
-          <Link href="#gallery" className="text-foreground/80 hover:text-foreground transition">
+          <Link href="/#gallery" className="text-foreground/80 hover:text-foreground transition">
             Gallery
           </Link>
-          <Link href="#about" className="text-foreground/80 hover:text-foreground transition">
+          <Link href="/#about" className="text-foreground/80 hover:text-foreground transition">
             About
           </Link>
-          <Link href="#contact" className="text-foreground/80 hover:text-foreground transition">
+          <Link href="/#contact" className="text-foreground/80 hover:text-foreground transition">
             Contact
           </Link>
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">Order Now</Button>
+          <Link href="/order" className="text-foreground/80 hover:text-foreground transition">
+            <Button className="bg-primary hover:bg-primary/90 text-white">
+              Order Now
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -47,19 +51,23 @@ export function Header() {
       {isOpen && (
         <div className="md:hidden bg-card border-t border-border">
           <div className="px-4 py-3 space-y-2">
-            <Link href="#menu" className="block py-2 text-foreground/80 hover:text-foreground">
+            <Link href="/menu" className="block py-2 text-foreground/80 hover:text-foreground">
               Menu
             </Link>
-            <Link href="#gallery" className="block py-2 text-foreground/80 hover:text-foreground">
+            <Link href="/#gallery" className="block py-2 text-foreground/80 hover:text-foreground">
               Gallery
             </Link>
-            <Link href="#about" className="block py-2 text-foreground/80 hover:text-foreground">
+            <Link href="/#about" className="block py-2 text-foreground/80 hover:text-foreground">
               About
             </Link>
-            <Link href="#contact" className="block py-2 text-foreground/80 hover:text-foreground">
+            <Link href="/#contact" className="block py-2 text-foreground/80 hover:text-foreground">
               Contact
             </Link>
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">Order Now</Button>
+            <Link href="/order" className="w-full text-foreground/80 hover:text-foreground transition">
+              <Button className="bg-primary hover:bg-primary/90 text-white">
+                Order Now
+              </Button>
+            </Link>
           </div>
         </div>
       )}
