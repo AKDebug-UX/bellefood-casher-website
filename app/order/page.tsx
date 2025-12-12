@@ -22,3 +22,10 @@ export default function OrderPage() {
     </main>
   )
 }
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Order",
+  description: "Select multiple items, add delivery details, and place your order via WhatsApp.",
+  alternates: { canonical: "/order" },
+}

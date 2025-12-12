@@ -106,3 +106,10 @@ export default function AboutPage() {
     </main>
   )
 }
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "Learn about Bellefood Casher and our 24/7 premium food delivery service in Lagos.",
+  alternates: { canonical: "/about" },
+}
